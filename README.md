@@ -39,11 +39,18 @@ git revert与reset的区别是git revert会生成一个新的提交来撤销某�
 现在先假设几个环境，本文将会给出相应的解决方法： 
 1. 本地代码（或文件）已经add但是还未commit
 git reset --hard  工作区的已经add的文件会被删除毛都不剩，未被add的文件不受git管理不会删除。慎用
-1.1 但是现在想找回删除的文件：git fsck --lost-found 并不会直接找回
-1.2 打开.git/lost-found/other这个路径下的文件
-1.3 将这些文件拷贝到一个其他的地方（毕竟小心得来的残骸，就要长点心好好保护啦！）
-1.4 将这些文件命令成原来的名字就可以恢复了，很麻烦
+但是现在想找回删除的文件：两种方法
+```
+方法1：
+git fsck --lost-found 并不会直接找回
+打开.git/lost-found/other这个路径下的文件
+将这些文件拷贝到一个其他的地方（毕竟小心得来的残骸，就要长点心好好保护啦！）
+将这些文件命令成原来的名字就可以恢复了，很麻烦
 
+方法2：
+git reflog 查看操作记录
+git reset --hard 上一次的commitid   
+```
 
 
 2. 要回退的commit的代码已经commit了，但是还未push到远程个人repository 
