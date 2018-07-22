@@ -64,13 +64,17 @@ git reset --hard 上一次的commitid
 git revert commitid 使用revert回退到指定的提交
 git push 
 
-
-
-
-
-
 二、Git删除
+删除本地分支： git branch -D branchName
+删除远程分支： git push origin --delete BranchName
 
 三、Git合并
 
+
+
+
+
+
 四、Git别名
+git config --global alias.s status
+git config --global alias.b branch
