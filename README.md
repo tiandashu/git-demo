@@ -64,19 +64,23 @@ git reset --hard 上一次的commitid
 git revert commitid 使用revert回退到指定的提交,但是会生成一次提交记录，版本整体是向前的。这样的好处是不会回退掉别人提交的代码
 git push 
 
-二、Git删除
+二、Git分支
+git checkout -b newbranchName   在本地生成一个新分支并切换过去
+git push --set-upstream origin newbranchName  远程仓库也创建一个同步分支
+注意：虽然我们是从master创建的分支，但是在新分支上改动的提交不能直接push到master，需要在远程创建一个同步分支
+
+三、Git删除
 删除本地分支： git branch -D branchName
 删除远程分支： git push origin --delete BranchName
 
-三、Git合并
+四、Git合并
 
 
 
 
 
 
-四、Git别名
+五、Git别名
 git config --global alias.s status
 git config --global alias.b branch
 
-五、Git分支
