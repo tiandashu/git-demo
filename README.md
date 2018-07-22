@@ -37,7 +37,10 @@ git revert与reset的区别是git revert会生成一个新的提交来撤销某�
 ```
 
 现在先假设几个环境，本文将会给出相应的解决方法： 
+
 1. 本地代码（或文件）已经add但是还未commit
+2. 要回退的commit的代码已经commit了，但是还未push到远程个人repository 
+这两种情况下均可以使用下面的操作
 git reset --hard  工作区的已经add的文件会被删除毛都不剩，未被add的文件不受git管理不会删除。慎用
 但是现在想找回删除的文件：两种方法
 ```
@@ -52,9 +55,8 @@ git reflog 查看操作记录
 git reset --hard 上一次的commitid   
 ```
 
-
-2. 要回退的commit的代码已经commit了，但是还未push到远程个人repository 
 3. 要回退的commit的代码已经push到远程的个人分支，但是还未merge到公共的repository 
+
 4. 要回退的commit的代码已被merge（合入)到公共的repository
 
 
