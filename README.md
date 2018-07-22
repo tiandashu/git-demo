@@ -56,9 +56,12 @@ git reset --hard 上一次的commitid
 ```
 
 3. 要回退的commit的代码已经push到远程的个人分支，但是还未merge到公共的repository 
+<<<<<<< HEAD
 步骤一： git reset commitid     本地先会退到指定的提交，此时远程仓库的代码还是最新的没有回退
 步骤二： git push -f  origin master     将本地回退的强制更新到远程仓库。注意：本地分支回滚后，版本将落后远程分支，必须使用强制推送覆盖远程分支，否则无法推送到远程分支
 
+=======
+>>>>>>> a94e975b9f72b237c94e7ca397e82201266e64d5
 
 4. 要回退的commit的代码已被merge（合入)到公共的repository
 
