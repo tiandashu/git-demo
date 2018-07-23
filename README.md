@@ -74,14 +74,19 @@ git push
 二、Git分支
 
 git checkout -b newbranchName   在本地生成一个新分支并切换过去
+
 git checkout -b dev origin/dev  在本地创建远程的dev分支
+
 git push --set-upstream origin newbranchName  建立本地分支和远程分支的关联
-注意：虽然我们是从master创建的分支，但是在新分支上改动的提交不能直接push到master，需要在远程创建一个同步分支
+
+注意：虽然我们是从master创建的分支，但是在新分支上改动的提交不能直接push到master，需要建立本地分支和远程分支的关联
 
 三、Git删除
 
 删除本地分支： git branch -d branchName
+
 强制删除本地分支： git branch -D branchName    //如果要丢弃一个没有被合并过的分支，可以通过git branch -D <name>强行删除。
+
 删除远程分支： git push origin --delete BranchName
 
 四、Git合并
@@ -116,13 +121,17 @@ git Rebase
 ```
 
 五、Git别名
+
 git config --global alias.s status
+
 git config --global alias.b branch
 
 六、远程分支
 
 git remote add origin  git@github.com:tiandashu/demo.git
+
 git remote add origin  git@github.com:tiandashu1/demo.git
+
 为本地的git仓库添加远程git仓库，可以同时添加多个仓库且远程仓库的名字origin可以随便命名
 
 git push -u origin master 第一次向远程提交的时候加上-u参数，Git不但会把本地的master分支内容推送的远程新的master分支，还会把本地的master分支和远程的master分支关联起来，在以后的推送或者拉取时就可以简化命令。
