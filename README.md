@@ -3,12 +3,15 @@ Git 基础
 ### Git配置ssh
 
 1. git config --global user.name "tiandashu"
+
    git config --global user.email "test@qq.com"
 
 2. ssh key-gen -t rsa -C "test@qq.com"
+
    三次回车不用设置密码得到2个文件在C:\Users\Administrator\.ssh目录下
 
 3. cat ~/.ssh/id_rsa.pub
+
    获取公钥
 
 4. 登录Github -> setting -> ssh添加完成
@@ -37,9 +40,9 @@ git revert与reset的区别是git revert会生成一个新的提交来撤销某�
 ```
 
 现在先假设几个环境，本文将会给出相应的解决方法： 
+
 0. 当你改乱了工作区某个文件的内容，想直接丢弃工作区的修改时，用命令git checkout -- file
 git checkout其实是用版本库里的版本替换工作区的版本，无论工作区是修改还是删除，都可以“一键还原”。
-
 1. 本地代码（或文件）已经add但是还未commit
 2. 要回退的commit的代码已经commit了，但是还未push到远程个人repository 
 这两种情况下均可以使用下面的操作
